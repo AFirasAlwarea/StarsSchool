@@ -13,11 +13,13 @@ namespace StarsSchool.Models
 
         public string Name { get; set; }
 
+        public string Subject { get; set; }
+
         public string Duration { get; set; }
 
         public int TeacherId { get; set; }
 
-        public List<Student> Students { get; set; }
+        public ICollection<Student> Students { get; set; }
 
     }
 }
