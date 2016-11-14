@@ -29,5 +29,13 @@ namespace StarsSchool.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<StarsSchool.Models.Course> Courses { get; set; }
+
+        public System.Data.Entity.DbSet<StarsSchool.Models.Teacher> Teachers { get; set; }
+
+        public System.Data.Entity.DbSet<StarsSchool.Models.Student> Students { get; set; }
+
+        public System.Data.Entity.DbSet<StarsSchool.Models.Assignment> Assignments { get; set; }
     }
 }
