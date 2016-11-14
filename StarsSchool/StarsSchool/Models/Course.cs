@@ -17,9 +17,10 @@ namespace StarsSchool.Models
 
         public string Duration { get; set; }
 
+        [Display(Name = "Teacher")]
         public int TeacherId { get; set; }
 
-        public ICollection<Student> Students { get; set; }
+        public virtual ICollection<Student> Students { get; set; }
 
     }
 }

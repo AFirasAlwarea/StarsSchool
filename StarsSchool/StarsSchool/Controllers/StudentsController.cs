@@ -38,6 +38,8 @@ namespace StarsSchool.Controllers
         // GET: Students/Create
         public ActionResult Create()
         {
+            IQueryable c = db.Courses;
+            ViewBag.kurs = c;
             return View();
         }
 
@@ -46,11 +48,14 @@ namespace StarsSchool.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name")] Student student)
+        public ActionResult Create([Bind(Include = "Id,Name")] Student student, string kurs)
         {
             if (ModelState.IsValid)
             {
+                Course k = db.Courses.Where(ku => ku.Name == kurs).FirstOrDefault();
+
                 db.Students.Add(student);
+                k.Students.Add(student);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
