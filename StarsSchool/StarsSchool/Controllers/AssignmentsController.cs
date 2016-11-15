@@ -38,6 +38,8 @@ namespace StarsSchool.Controllers
         // GET: Assignments/Create
         public ActionResult Create()
         {
+            IQueryable c = db.Courses;
+            ViewBag.kurs = c;
             return View();
         }
 

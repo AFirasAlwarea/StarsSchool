@@ -17,7 +17,7 @@ namespace StarsSchool.Controllers
         // GET: Students
         public ActionResult Index()
         {
-            return View(db.Students.ToList());
+             return View(db.Students.ToList());
         }
 
         // GET: Students/Details/5
@@ -32,6 +32,12 @@ namespace StarsSchool.Controllers
             {
                 return HttpNotFound();
             }
+
+            //Teacher t = db.Teachers.Where(p => p.Name == teach).FirstOrDefault();
+            //ViewBag.courseId =  from n in db.Courses
+            //                    where student.Id == id
+            //                    select n.Name;
+
             return View(student);
         }
 

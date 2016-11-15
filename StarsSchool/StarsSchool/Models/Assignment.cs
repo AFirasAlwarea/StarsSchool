@@ -15,6 +15,7 @@ namespace StarsSchool.Models
 
         public DateTime DeadLine { get; set; }
 
+        [Display (Name="Course")]
         public int CourseId { get; set; }
 
     }

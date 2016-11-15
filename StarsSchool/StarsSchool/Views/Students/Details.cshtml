@@ -18,6 +18,17 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Courses)
+        </dt>
+
+        <dd>
+            @foreach (var item in Model.Courses)
+            {
+                <p>@item.Name</p>
+            }
+        </dd>
+
     </dl>
 </div>
 <p>
